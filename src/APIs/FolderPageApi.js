@@ -25,20 +25,14 @@ export const getFolderName = async () => {
   }
 };
 
-export const getLinkData = async (id) => {
-  try {
-    if (!id) {
-      const response = await fetch(`${BASE_API}/users/1/links`);
-      const result = await response.json();
-      return result;
-    } else {
-      const response = await fetch(`${BASE_API}/users/1/links?folderId=${id}`);
-      const result = await response.json();
-      return result;
-    }
-  } catch (error) {
-    console.log(error);
-  }
+export const getAllLinks = async () => {
+  const response = await fetch(`${BASE_API}/users/1/links`);
+  const result = await response.json();
+  return result;
 };
 
-//if와 else 분리해서 함수 따로 만들기
+export const getFolderById = async (id) => {
+  const response = await fetch(`${BASE_API}/users/1/links?folderId=${id}`);
+  const result = await response.json();
+  return result;
+};

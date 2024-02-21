@@ -8,6 +8,10 @@
   max-width: 192rem;
 }
 
+nav{
+  width: 100%;
+}
+
 .navBar{
   display: flex;
   justify-content: space-between;
@@ -59,9 +63,6 @@
 }
 
 @media (max-width: 767px) {
-  nav{
-    width: 100%;
-  }
   .logo{
     height: 2rem;
   }
