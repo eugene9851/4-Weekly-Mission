@@ -5,7 +5,7 @@ import linkIcon from "../images/link.svg";
 export function FolderHeader({ profile }) {
   return (
     <>
-      <div className="headerArea">
+      <header className="headerArea">
         <nav>
           <div className="navBar">
             <a href="index.html">
@@ -27,17 +27,17 @@ export function FolderHeader({ profile }) {
             )}
           </div>
           <form>
-            <label className="linkInputArea">
+            <div className="linkInputArea">
               <input
                 placeholder="링크를 추가해 보세요"
                 className="addLinks"
               ></input>
               <img src={linkIcon} alt="link icon" className="linkIcon"></img>
               <button className="addBtn">추가하기</button>
-            </label>
+            </div>
           </form>
         </nav>
-      </div>
+      </header>
     </>
   );
 }

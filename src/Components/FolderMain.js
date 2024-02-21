@@ -19,16 +19,14 @@ export function FolderMain() {
 
   return (
     <>
-      <div className="mainArea">
-        <div className="searchArea">
+      <main className="mainArea">
+        <form className="searchArea">
           <input
             className="searchInput"
             placeholder="링크를 검색해 보세요."
           ></input>
-          <div className="searchIcon">
-            <img src={searchIcon} alt="search" className="searchImg"></img>
-          </div>
-        </div>
+          <img src={searchIcon} alt="search" className="searchImg"></img>
+        </form>
 
         <FolderMenu folderNames={folderNames} onMenuChange={handleMenuChange} />
 
@@ -46,7 +44,7 @@ export function FolderMain() {
         ) : (
           <div className="noLink">저장된 링크가 없습니다.</div>
         )}
-      </div>
+      </main>
     </>
   );
 }
