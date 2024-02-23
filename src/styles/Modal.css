@@ -12,6 +12,7 @@
 .modalBox p {
   color: var(--gray60);
   font-size: 1.6rem;
+  margin-top: -13px;
 }
 
 .closeIcon {
@@ -61,11 +62,12 @@
   justify-content: space-around;
 }
 
-.socialButtonContainer div {
+.snsButton {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
+  gap: 1rem;
+  font-size: 1.4rem;
 }
 
 .socialButtonContainer img {

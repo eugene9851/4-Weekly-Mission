@@ -1,10 +1,10 @@
 import ModalContainer from "./ModalContainer";
 
-const ModalDeleteFolder = ({ isOpen, onClose, selectedFolderName }) => {
+const ModalDeleteFolder = ({ isOpen, onClose, currentMenu }) => {
   const deleteFolderContent = (
     <>
-      <h2>폴더 삭제</h2>
-      <p>{selectedFolderName}</p>
+      <h2 className="title">폴더 삭제</h2>
+      <p>{currentMenu}</p>
       <button className="redButton">삭제하기</button>
     </>
   );
