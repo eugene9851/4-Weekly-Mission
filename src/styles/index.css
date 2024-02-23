@@ -19,6 +19,7 @@
   margin: 0;
   font-family: "Pretendard";
   word-break: keep-all;
+  border-radius: 0;
 }
 
 html,
@@ -41,4 +42,8 @@ button {
   padding: unset;
   background-color: unset;
   cursor: pointer;
+}
+button, input {
+  border-radius:0;
+  border:0
 }

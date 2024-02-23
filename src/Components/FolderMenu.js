@@ -1,7 +1,13 @@
 import "../styles/folderMenu.css";
+import { useFolderNames } from "../useHooks/useFolderNames";
 import { Button } from "./Button";
+import { useShowModal } from "../useHooks/useShowModal";
+import ModalAddFolder from "./Modal/ModalAddFolder";
 
-export function FolderMenu({ folderNames, onMenuChange }) {
+export function FolderMenu({ onMenuChange }) {
+  const { folderNames } = useFolderNames();
+  const { handleShowModal, showModal, setShowModal } = useShowModal();
+
   const sendMenu = (e, id) => {
     const newMenu = e.target.textContent;
     onMenuChange(newMenu, id);
@@ -20,11 +26,19 @@ export function FolderMenu({ folderNames, onMenuChange }) {
                 key={id}
                 onClick={(e) => sendMenu(e, id)}
               ></Button>
-              //사용자에게 보여지는 글자와 id로 쓰이는 글자가 다른게 좋음
             ))}
         </div>
 
-        <div className="add">폴더 추가 +</div>
+        <button className="add" onClick={handleShowModal}>
+          폴더 추가 +
+        </button>
+        {showModal && (
+          <ModalAddFolder
+            isOpen={showModal}
+            onClose={() => setShowModal(false)}
+            selectedFolderName={"내용 입력"}
+          />
+        )}
       </div>
     </>
   );

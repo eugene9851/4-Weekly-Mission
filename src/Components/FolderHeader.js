@@ -1,11 +1,15 @@
 import React from "react";
 import logo from "../images/logo.svg";
 import linkIcon from "../images/link.svg";
+import ModalAddToFolder from "./Modal/ModalAddToFolder";
+import { useShowModal } from "../useHooks/useShowModal";
 
 export function FolderHeader({ profile }) {
+  const { handleShowModal, showModal, setShowModal } = useShowModal();
+
   return (
     <>
-      <div className="headerArea">
+      <header className="headerArea">
         <nav>
           <div className="navBar">
             <a href="index.html">
@@ -27,17 +31,25 @@ export function FolderHeader({ profile }) {
             )}
           </div>
           <form>
-            <label className="linkInputArea">
+            <div className="linkInputArea">
               <input
                 placeholder="링크를 추가해 보세요"
                 className="addLinks"
               ></input>
               <img src={linkIcon} alt="link icon" className="linkIcon"></img>
-              <button className="addBtn">추가하기</button>
-            </label>
+              <button className="addBtn" onClick={handleShowModal}>
+                추가하기
+              </button>
+              {showModal && (
+                <ModalAddToFolder
+                  isOpen={showModal}
+                  onClose={() => setShowModal(false)}
+                />
+              )}
+            </div>
           </form>
         </nav>
-      </div>
+      </header>
     </>
   );
 }
