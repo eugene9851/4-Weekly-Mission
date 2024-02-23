@@ -24,7 +24,6 @@ export const useLinks = () => {
 
   useEffect(() => {
     fetchAllLinks();
-    // fetchLinkById();
   }, []);
 
   return {

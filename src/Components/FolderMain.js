@@ -9,7 +9,6 @@ import { useLinks } from "../useHooks/useLinks";
 export function FolderMain() {
   const { currentMenu, setCurrentMenu } = useFolder();
   const { handleLinks, links } = useLinks();
-  console.log(links);
 
   const handleMenuChange = (newMenu, id) => {
     setCurrentMenu(newMenu);

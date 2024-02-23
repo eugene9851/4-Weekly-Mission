@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../images/logo.svg";
 import linkIcon from "../images/link.svg";
+import ModalAddToFolder from "./Modal/ModalAddToFolder";
 
 export function FolderHeader({ profile }) {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = (e) => {
+    e.preventDefault();
+    setShowModal(true);
+  };
+
   return (
     <>
       <header className="headerArea">
@@ -33,7 +41,15 @@ export function FolderHeader({ profile }) {
                 className="addLinks"
               ></input>
               <img src={linkIcon} alt="link icon" className="linkIcon"></img>
-              <button className="addBtn">추가하기</button>
+              <button className="addBtn" onClick={handleShowModal}>
+                추가하기
+              </button>
+              {showModal && (
+                <ModalAddToFolder
+                  isOpen={showModal}
+                  onClose={() => setShowModal(false)}
+                />
+              )}
             </div>
           </form>
         </nav>

@@ -1,6 +1,6 @@
 import Modal from "react-modal";
-import closeIcon from "../../assets/close.svg";
-import "./Modal.css";
+import closeIcon from "../../images/close.svg";
+import "../../styles/Modal.css";
 
 const ModalContainer = ({ isOpen, onClose, children }) => {
   const defaultStyles = {
@@ -11,6 +11,7 @@ const ModalContainer = ({ isOpen, onClose, children }) => {
       bottom: "auto",
       marginRight: "-50%",
       transform: "translate(-50%, -50%)",
+      borderRadius: 15,
     },
   };
 
