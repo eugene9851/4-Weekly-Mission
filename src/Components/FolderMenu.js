@@ -6,8 +6,7 @@ import ModalAddFolder from "./Modal/ModalAddFolder";
 
 export function FolderMenu({ onMenuChange }) {
   const { folderNames } = useFolderNames();
-  const { handleShowModal, showModal, setShowModal, clickValue } =
-    useShowModal();
+  const { handleShowModal, showModal, setShowModal } = useShowModal();
 
   const sendMenu = (e, id) => {
     const newMenu = e.target.textContent;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import searchIcon from "../images/search.svg";
 import { FolderCard } from "./FolderCard";
 import { FolderMenu } from "./FolderMenu";
@@ -9,10 +9,12 @@ import { useLinks } from "../useHooks/useLinks";
 export function FolderMain() {
   const { currentMenu, setCurrentMenu } = useFolder();
   const { handleLinks, links } = useLinks();
+  const [folderCurrentId, setFolderCurrentId] = useState("");
 
   const handleMenuChange = (newMenu, id) => {
     setCurrentMenu(newMenu);
     handleLinks(id);
+    setFolderCurrentId(id);
   };
 
   return (
@@ -30,7 +32,7 @@ export function FolderMain() {
 
         <div className="titleBar">
           <div className="title">{currentMenu}</div>
-          {currentMenu !== "전체" && <HandleFolder />}
+          {currentMenu !== "전체" && <HandleFolder id={folderCurrentId} />}
         </div>
 
         {links && links.length ? (

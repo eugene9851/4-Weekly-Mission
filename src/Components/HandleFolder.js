@@ -8,10 +8,10 @@ import ModalShare from "./Modal/ModalShare";
 import ModalDeleteFolder from "./Modal/ModalDeleteFolder";
 import { useFolder } from "../useHooks/useFolder";
 
-export function HandleFolder() {
+export function HandleFolder({ id }) {
   const { handleShowModal, showModal, setShowModal, clickValue } =
     useShowModal();
-  const { currentMenu } = useFolder();
+  const { currentMenu, folder } = useFolder();
 
   return (
     <>
@@ -34,6 +34,7 @@ export function HandleFolder() {
           isOpen={showModal}
           onClose={() => setShowModal(false)}
           currentMenu={currentMenu}
+          currentFolderId={id}
         />
       ) : showModal && clickValue === "이름 변경" ? (
         <ModalEdit

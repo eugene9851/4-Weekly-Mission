@@ -2,39 +2,38 @@ import kakao from "../../images/shareKakao.svg";
 import facebook from "../../images/shareFacebook.svg";
 import link from "../../images/shareLink.svg";
 import ModalContainer from "./ModalContainer";
-// import useClipboard from "../../hooks/useClipboard";
-// import useKakaoShare from "../../hooks/useKakaoShare";
-// import useFacebookShare from "../../hooks/useFacebookShare";
+import { handleClipBoard } from "../../utils/handleClipBoard";
+import { shareToFacebook } from "../../utils/shareToFacebook";
+import { useKakaoShare } from "../../useHooks/useKakaoShare";
 
-const ModalShare = ({ isOpen, onClose, currentMenu }) => {
-  // const { copied, copyToClipboard } = useClipboard();
-  // const { handleKakaoShare } = useKakaoShare(
-  //   selectedFolderName,
-  //   selectedFolderId
-  // );
-  // const { handleFacebookShare } = useFacebookShare(selectedFolderId);
+const ModalShare = ({ isOpen, onClose, currentMenu, currentFolderId }) => {
+  const { shareKakao } = useKakaoShare(currentFolderId);
 
-  // const folderShareLink = `${window.location.origin}/shared/${selectedFolderId}`;
-  // const handleCopyToClipboard = () => {
-  //   copyToClipboard(folderShareLink);
-  // };
+  const urlBaseLink = "http://localhost:3000/shared/";
+  const handleCopyLink = () => {
+    handleClipBoard(`${urlBaseLink}${currentFolderId}`);
+  };
 
   const shareContent = (
     <>
       <h2 className="title">폴더 공유</h2>
       <p>{currentMenu}</p>
       <div className="socialButtonContainer">
-        <div className="snsButton">
+        <div className="snsButton" onClick={() => shareKakao()}>
           <img src={kakao} alt="kakao" />
           카카오톡
         </div>
-        <div className="snsButton">
+        <div
+          className="snsButton"
+          onClick={() => {
+            shareToFacebook(`${urlBaseLink}${currentFolderId}`);
+          }}
+        >
           <img src={facebook} alt="facebook" />
           페이스북
         </div>
-        <div className="snsButton">
+        <div className="snsButton" onClick={handleCopyLink}>
           <img src={link} alt="link" />
-          {/* {copied ? "복사 완료" : "링크 복사"} */}
           링크 복사
         </div>
       </div>
