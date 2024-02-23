@@ -1,10 +1,10 @@
 import ModalContainer from "./ModalContainer";
 import { useFolder } from "../../useHooks/useFolder";
-import { useLinks } from "../../useHooks/useLinks";
+// import { useLinks } from "../../useHooks/useLinks";
 
 const ModalAddToFolder = ({ isOpen, onClose, url }) => {
   const { folder } = useFolder();
-  const { handleLinks, links } = useLinks();
+  // const { handleLinks, links } = useLinks();
 
   const addFolderContent = (
     <>
