@@ -16,17 +16,14 @@ export const getUserData = async () => {
 
 export const getFolderName = async () => {
   try {
-    const response = await fetch(
-      `https://bootcamp-api.codeit.kr/api/users/1/folders`
-    );
+    const response = await fetch(`${BASE_API}/users/1/folders`);
     const result = await response.json();
-    console.log(result.data);
+    return result;
   } catch (error) {
     console.log(error);
     return;
   }
 };
-getFolderName();
 
 export const getAllLinks = async () => {
   const response = await fetch(`${BASE_API}/users/1/links`);

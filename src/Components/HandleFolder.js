@@ -11,7 +11,7 @@ import { useFolder } from "../useHooks/useFolder";
 export function HandleFolder({ id }) {
   const { handleShowModal, showModal, setShowModal, clickValue } =
     useShowModal();
-  const { currentMenu, folder } = useFolder();
+  const { currentMenu } = useFolder();
 
   return (
     <>
