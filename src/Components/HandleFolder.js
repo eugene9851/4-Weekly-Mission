@@ -3,15 +3,10 @@ import changeIcon from "../images/change.svg";
 import deleteIcon from "../images/delete.svg";
 import "../styles/handleFolder.css";
 import ModalEdit from "./Modal/ModalEdit";
-import { useState } from "react";
+import { useShowModal } from "../useHooks/useShowModal";
 
 export function HandleFolder() {
-  const [showModal, setShowModal] = useState(false);
-
-  const handleShowModal = (e) => {
-    e.preventDefault();
-    setShowModal(true);
-  };
+  const { handleShowModal, showModal, setShowModal } = useShowModal();
 
   return (
     <>

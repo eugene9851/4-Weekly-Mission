@@ -41,7 +41,7 @@ export function FolderCard({ cardInfo }) {
               <button onClick={handleClickKebab}>
                 <img src={kebabIcon} alt="kebab icon" className="kebab"></img>
               </button>
-              {kebabToggle && <CardKebab />}
+              {kebabToggle && <CardKebab url={url} />}
             </div>
           </div>
           <div className="cardContent">

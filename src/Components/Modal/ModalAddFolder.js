@@ -1,10 +1,10 @@
 import ModalContainer from "./ModalContainer";
 
-const ModalAddFolder = ({ isOpen, onClose }) => {
+const ModalAddFolder = ({ isOpen, onClose, selectedFolderName }) => {
   const addContent = (
     <>
-      <h2>폴더 추가</h2>
-      <input placeholder="내용 입력" className="modalInput"></input>
+      <h2 className="title">폴더 추가</h2>
+      <input placeholder={selectedFolderName} className="modalInput" />
       <button className="blueButton">추가하기</button>
     </>
   );

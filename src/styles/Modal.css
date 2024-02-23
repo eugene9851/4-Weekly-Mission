@@ -10,7 +10,8 @@
 }
 
 .modalBox p {
-  color: gray;
+  color: var(--gray60);
+  font-size: 1.6rem;
 }
 
 .closeIcon {

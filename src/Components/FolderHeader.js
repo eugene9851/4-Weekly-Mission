@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../images/logo.svg";
 import linkIcon from "../images/link.svg";
 import ModalAddToFolder from "./Modal/ModalAddToFolder";
+import { useShowModal } from "../useHooks/useShowModal";
 
 export function FolderHeader({ profile }) {
-  const [showModal, setShowModal] = useState(false);
-
-  const handleShowModal = (e) => {
-    e.preventDefault();
-    setShowModal(true);
-  };
+  const { handleShowModal, showModal, setShowModal } = useShowModal();
 
   return (
     <>
