@@ -7,8 +7,9 @@ import { useFolder } from "../useHooks/useFolder";
 import { useLinks } from "../useHooks/useLinks";
 
 export function FolderMain() {
-  const { currentMenu, setCurrentMenu, folder } = useFolder();
+  const { currentMenu, setCurrentMenu } = useFolder();
   const { handleLinks, links } = useLinks();
+  console.log(links);
 
   const handleMenuChange = (newMenu, id) => {
     setCurrentMenu(newMenu);

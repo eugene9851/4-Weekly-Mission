@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { getAllLinks, getFolderById } from "../APIs/FolderPageApi";
 
 export const useLinks = () => {
@@ -21,6 +21,11 @@ export const useLinks = () => {
       fetchAllLinks();
     }
   };
+
+  useEffect(() => {
+    fetchAllLinks();
+    // fetchLinkById();
+  }, []);
 
   return {
     handleLinks,
