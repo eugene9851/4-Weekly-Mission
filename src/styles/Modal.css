@@ -25,8 +25,11 @@
   width: 100%;
   height: 2rem;
   flex: 1;
-  border-radius: 15px;
-  border: 1px solid var(--gray3-color);
+  border-radius: 10px;
+  border: 1px solid var(--gray20);
+}
+.modalInput:focus{
+  border-color: var(--primary)
 }
 
 .modalBox button {
@@ -80,7 +83,13 @@
   font-size: 1.7rem;
   cursor: pointer;
   border-radius: 10px;
+  display: flex;
+  gap: 1rem
 }
 .menuList:hover{
   background-color: #F0F6FF;
+}
+.menuList p{
+  font-size: 1.4rem;
+  margin-top: 4px;
 }
