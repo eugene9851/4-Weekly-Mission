@@ -7,6 +7,7 @@ export type Link = {
   created_at: number;
   description: string;
   url: string;
+  title: string;
 };
 
 export const useLinks = () => {

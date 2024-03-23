@@ -7,7 +7,7 @@ export function SharedMain({ cards }: { cards: CardLinks[] }) {
   return (
     <>
       <div className="mainArea">
-        <div className="searchArea">
+        <form className="searchArea">
           <input
             className="searchInput"
             placeholder="링크를 검색해 보세요."
@@ -15,7 +15,7 @@ export function SharedMain({ cards }: { cards: CardLinks[] }) {
           <div className="searchIcon">
             <img src={searchIcon} alt="search" className="searchImg"></img>
           </div>
-        </div>
+        </form>
 
         <div className="cardGrid">
           {cards &&

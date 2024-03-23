@@ -1,21 +1,41 @@
 import React, { useState } from "react";
-import searchIcon from "../images/search.svg";
 import { FolderCard } from "./FolderCard";
 import { FolderMenu } from "./FolderMenu";
 import { HandleFolder } from "./HandleFolder";
 import { useFolder } from "../useHooks/useFolder";
 import { useLinks } from "../useHooks/useLinks";
+import searchIcon from "../images/search.svg";
+import closeIcon from "../images/close.svg";
 
 export function FolderMain() {
   const { currentMenu, setCurrentMenu } = useFolder();
   const { handleLinks, links } = useLinks();
   const [folderCurrentId, setFolderCurrentId] = useState<number>();
+  const [searchInput, setSearchInput] = useState<string>("");
 
   const handleMenuChange = (newMenu: string, id?: number) => {
     setCurrentMenu(newMenu);
     handleLinks(id);
     setFolderCurrentId(id);
   };
+
+  const handleInputValue = () => {
+    setSearchInput("");
+  };
+
+  const handleSearchData = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchInput(e.target.value);
+  };
+
+  const lowerQuery = searchInput.toLowerCase();
+  const filteredLinks = links.filter(
+    (link) =>
+      link.url?.toLowerCase().includes(lowerQuery) ||
+      link.title?.toLowerCase().includes(lowerQuery) ||
+      link.description?.toLowerCase().includes(lowerQuery)
+  );
+
+  const linkArray = filteredLinks ? filteredLinks : links;
 
   return (
     <>
@@ -24,8 +44,16 @@ export function FolderMain() {
           <input
             className="searchInput"
             placeholder="링크를 검색해 보세요."
+            value={searchInput}
+            onChange={handleSearchData}
           ></input>
           <img src={searchIcon} alt="search" className="searchImg"></img>
+          <img
+            src={closeIcon}
+            alt="close"
+            className="closeImg"
+            onClick={handleInputValue}
+          ></img>
         </form>
 
         <FolderMenu onMenuChange={handleMenuChange} />
@@ -37,9 +65,9 @@ export function FolderMain() {
           )}
         </div>
 
-        {links && links.length ? (
+        {linkArray && linkArray.length ? (
           <div className="cardGrid">
-            {links.map((card) => (
+            {linkArray.map((card) => (
               <FolderCard key={card.id} cardInfo={card}></FolderCard>
             ))}
           </div>
