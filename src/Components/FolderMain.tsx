@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FolderCard } from "./FolderCard";
 import { FolderMenu } from "./FolderMenu";
 import { HandleFolder } from "./HandleFolder";

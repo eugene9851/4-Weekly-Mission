@@ -11,6 +11,7 @@ export interface CardInfo {
   createdAt: number;
   description: string;
   url: string;
+  title: string;
 }
 
 export interface CardLinks extends CardInfo {
