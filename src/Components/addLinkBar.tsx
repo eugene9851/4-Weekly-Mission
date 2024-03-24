@@ -1,41 +1,35 @@
-import "./AddLinkBar.css";
-import linkIcon from "../../assets/linkIcon.svg";
-import ModalAddFolder from "~/Components/Modal/ModalAddFolder.js";
-import { useState } from "react";
+// import "./AddLinkBar.css";
+import linkIcon from "../images/link.svg";
+import ModalAddToFolder from "./Modal/ModalAddToFolder";
+import { useShowModal } from "../useHooks/useShowModal";
 
-const AddLink = () => {
-  const [showModal, setShowModal] = useState(false);
-
-  const handleOpenModal = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
-    e.preventDefault();
-    setShowModal(true);
-  };
+const AddLinkBar = () => {
+  const { handleShowModal, showModal, setShowModal } = useShowModal();
 
   return (
-    <div className="addLinkContainer">
-      <form className="addLinkForm">
-        <label htmlFor="linkInput" className="hiddenLabel">
-          링크를 추가해보세요.
-        </label>
-        <img src={linkIcon} alt="link icon" />
-        <input
-          type="text"
-          id="linkInput"
-          placeholder="링크를 추가해 보세요."
-          className="addLinkInput"
-        />
-        <button onClick={handleOpenModal}>추가하기</button>
-        {showModal && (
-          <ModalAddFolder
-            isOpen={showModal}
-            onClose={() => setShowModal(false)}
-          />
-        )}
-      </form>
-    </div>
+    <header className="headerArea">
+      <nav>
+        <form>
+          <div className="linkInputArea">
+            <input
+              placeholder="링크를 추가해 보세요"
+              className="addLinks"
+            ></input>
+            <img src={linkIcon} alt="link icon" className="linkIcon"></img>
+            <button className="addBtn" onClick={handleShowModal}>
+              추가하기
+            </button>
+            {showModal && (
+              <ModalAddToFolder
+                isOpen={showModal}
+                onClose={() => setShowModal(false)}
+              />
+            )}
+          </div>
+        </form>
+      </nav>
+    </header>
   );
 };
 
-export default AddLink;
+export default AddLinkBar;
