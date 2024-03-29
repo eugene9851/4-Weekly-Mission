@@ -21,16 +21,16 @@ export function Footer() {
           </div>
           <div className="sns">
             <a href="#" target="_blank">
-              <Image src={facebook} alt="facebook" />
+              <Image width={20} height={20} src={facebook} alt="facebook" />
             </a>
             <a href="#" target="_blank">
-              <Image src={twitter} alt="twitter" />
+              <Image width={20} height={20} src={twitter} alt="twitter" />
             </a>
             <a href="#" target="_blank">
-              <Image src={youtube} alt="youtube" />
+              <Image width={20} height={20} src={youtube} alt="youtube" />
             </a>
             <a href="#" target="_blank">
-              <Image src={instagram} alt="instagram" />
+              <Image width={20} height={20} src={instagram} alt="instagram" />
             </a>
           </div>
         </div>

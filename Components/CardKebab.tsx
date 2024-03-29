@@ -1,4 +1,4 @@
-import "../styles/CardKebab.css";
+import "../styles/CardKebab.module.css";
 import { useShowModal } from "../useHooks/useShowModal";
 import ModalAddToFolder from "./Modal/ModalAddToFolder";
 import ModalDeleteLink from "./Modal/ModalDeleteLink";

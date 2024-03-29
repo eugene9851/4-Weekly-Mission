@@ -22,7 +22,7 @@ export function Card({ cardInfo }: { cardInfo: CardInfo }) {
       <a href={url}>
         <div className="card">
           <div className="cardImgSource">
-            <Image src={src} alt={alt} className="cardImg"></Image>
+            <Image src={src} alt={alt} className="cardImg" />
           </div>
           <div className="cardContent">
             <p className="createdFrom">{getFromTime(createdAt)}</p>

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import hero from "../images/hero.png";
+import hero from "@/public/images/hero.png";
 // kakao 기능 동작을 위해 넣어준다.
-const { Kakao } = window;
+const Kakao = typeof window !== "undefined" && window.Kakao;
 
 export const useKakaoShare = (currentFolderId: number) => {
   // 배포한 자신의 사이트

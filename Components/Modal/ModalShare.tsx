@@ -1,6 +1,6 @@
-import kakao from "../../images/shareKakao.svg";
-import facebook from "../../images/shareFacebook.svg";
-import link from "../../images/shareLink.svg";
+import kakao from "@/public/images/shareKakao.svg";
+import facebook from "@/public/images/shareFacebook.svg";
+import link from "@/public/images/shareLink.svg";
 import ModalContainer from "./ModalContainer";
 import { handleClipBoard } from "../../utils/handleClipBoard";
 import { shareToFacebook } from "../../utils/shareToFacebook";
@@ -33,7 +33,7 @@ const ModalShare = ({
       <p>{currentMenu}</p>
       <div className="socialButtonContainer">
         <div className="snsButton" onClick={() => shareKakao()}>
-          <Image src={kakao} alt="kakao" />
+          <Image width={26} height={24} src={kakao} alt="kakao" />
           카카오톡
         </div>
         <div
@@ -42,11 +42,11 @@ const ModalShare = ({
             shareToFacebook(`${urlBaseLink}${currentFolderId}`);
           }}
         >
-          <Image src={facebook} alt="facebook" />
+          <Image width={20} height={20} src={facebook} alt="facebook" />
           페이스북
         </div>
         <div className="snsButton" onClick={handleCopyLink}>
-          <Image src={link} alt="link" />
+          <Image width={42} height={42} src={link} alt="link" />
           링크 복사
         </div>
       </div>

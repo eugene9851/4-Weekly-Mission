@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { getFromTime } from "../utils/getFromTime";
-import favoriteIcon from "../images/favorite.svg";
-import kebabIcon from "../images/kebab.svg";
-import "../styles/folderCard.css";
+import favoriteIcon from "@/public/images/favorite.svg";
+import kebabIcon from "@/public/images/kebab.svg";
+import "../styles/folderCard.module.css";
 import { CardKebab } from "./CardKebab";
 import { Link } from "@/useHooks/useLinks";
 import Image from "next/image";
@@ -39,19 +39,29 @@ export function FolderCard({ cardInfo }: Props) {
       <a href={url}>
         <div className="card">
           <div className="cardImgSource">
-            <Image src={src} alt={alt} className="cardImg"></Image>
+            <Image
+              width={300}
+              height={200}
+              src={src}
+              alt={alt}
+              className="cardImg"
+            />
             <div>
               <Image
+                width={27}
+                height={27}
                 src={favoriteIcon}
                 alt="favorite icon"
                 className="favorite"
-              ></Image>
+              />
               <button onClick={handleClickKebab}>
                 <Image
+                  width={22}
+                  height={17}
                   src={kebabIcon}
                   alt="kebab icon"
                   className="kebab"
-                ></Image>
+                />
               </button>
               {kebabToggle && <CardKebab url={url} />}
             </div>

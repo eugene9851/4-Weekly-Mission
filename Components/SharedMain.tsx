@@ -35,13 +35,21 @@ export function SharedMain({ cards }: { cards: CardLinks[] }) {
             value={searchInput}
             onChange={handleSearchData}
           ></input>
-          <Image src={searchIcon} alt="search" className="searchImg"></Image>
           <Image
+            width={16}
+            height={16}
+            src={searchIcon}
+            alt="search"
+            className="searchImg"
+          />
+          <Image
+            width={24}
+            height={24}
             src={closeIcon}
             alt="close"
             className="closeImg"
             onClick={handleInputValue}
-          ></Image>
+          />
         </form>
 
         <div className="cardGrid">

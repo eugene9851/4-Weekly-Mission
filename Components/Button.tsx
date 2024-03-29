@@ -1,4 +1,4 @@
-import "../styles/button.css";
+import "../styles/button.module.css";
 
 export function Button({
   folderName,

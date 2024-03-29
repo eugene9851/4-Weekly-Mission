@@ -3,11 +3,11 @@ import { FolderHeader } from "../Components/FolderHeader";
 import { Footer } from "../Components/Footer";
 import { FolderMain } from "../Components/FolderMain";
 import { getUserData } from "./api/FolderPageApi";
-// import "../styles/Page.css";
+// import "@/styles/Page.css";
 import { Profile } from "./api/FolderPageApi";
 import AddLinkBar from "../Components/addLinkBar";
 
-export function FolderPage() {
+export default function FolderPage() {
   const [profile, setProfile] = useState<Profile>();
   const [isTopVisible, setIsTopVisible] = useState(true);
   const [isFooterVisible, setIsFooterVisible] = useState(true);

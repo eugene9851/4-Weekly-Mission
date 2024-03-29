@@ -1,7 +1,7 @@
-import shareIcon from "../images/sharewindow.svg";
-import changeIcon from "../images/change.svg";
-import deleteIcon from "../images/delete.svg";
-import "../styles/handleFolder.css";
+import shareIcon from "@/public/images/sharewindow.svg";
+import changeIcon from "@/public/images/change.svg";
+import deleteIcon from "@/public/images/delete.svg";
+import "../styles/handleFolder.module.css";
 import ModalEdit from "./Modal/ModalEdit";
 import { useShowModal } from "../useHooks/useShowModal";
 import ModalShare from "./Modal/ModalShare";
@@ -21,15 +21,20 @@ export function HandleFolder({ id }: Props) {
     <>
       <div className="handle">
         <button className="icon" onClick={handleShowModal}>
-          <Image src={shareIcon} alt="공유 아이콘" />
+          <Image width={18} height={19} src={shareIcon} alt="공유 아이콘" />
           공유
         </button>
         <button className="icon" onClick={handleShowModal}>
-          <Image src={changeIcon} alt="이름변경 아이콘" />
+          <Image
+            width={18}
+            height={19}
+            src={changeIcon}
+            alt="이름변경 아이콘"
+          />
           이름 변경
         </button>
         <button className="icon" onClick={handleShowModal}>
-          <Image src={deleteIcon} alt="삭제 아이콘" />
+          <Image width={18} height={19} src={deleteIcon} alt="삭제 아이콘" />
           삭제
         </button>
       </div>

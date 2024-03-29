@@ -4,8 +4,8 @@ import { FolderMenu } from "./FolderMenu";
 import { HandleFolder } from "./HandleFolder";
 import { useFolder } from "../useHooks/useFolder";
 import { useLinks } from "../useHooks/useLinks";
-import searchIcon from "../images/search.svg";
-import closeIcon from "../images/close.svg";
+import searchIcon from "@/public/images/search.svg";
+import closeIcon from "@/public/images/close.svg";
 import Image from "next/image";
 
 export function FolderMain() {
@@ -48,13 +48,21 @@ export function FolderMain() {
             value={searchInput}
             onChange={handleSearchData}
           ></input>
-          <Image src={searchIcon} alt="search" className="searchImg"></Image>
           <Image
+            width={16}
+            height={16}
+            src={searchIcon}
+            alt="search"
+            className="searchImg"
+          />
+          <Image
+            width={24}
+            height={24}
             src={closeIcon}
             alt="close"
             className="closeImg"
             onClick={handleInputValue}
-          ></Image>
+          />
         </form>
 
         <FolderMenu onMenuChange={handleMenuChange} />

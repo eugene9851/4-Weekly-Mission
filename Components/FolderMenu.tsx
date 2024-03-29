@@ -1,4 +1,4 @@
-import "../styles/folderMenu.css";
+import "../styles/folderMenu.module.css";
 import { useFolderNames } from "../useHooks/useFolderNames";
 import { Button } from "./Button";
 import { useShowModal } from "../useHooks/useShowModal";

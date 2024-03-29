@@ -1,5 +1,5 @@
 // import "./AddLinkBar.css";
-import linkIcon from "../images/link.svg";
+import linkIcon from "@/public/images/link.svg";
 import ModalAddToFolder from "./Modal/ModalAddToFolder";
 import { useShowModal } from "../useHooks/useShowModal";
 import Image from "next/image";
@@ -16,7 +16,13 @@ const AddLinkBar = () => {
               placeholder="링크를 추가해 보세요"
               className="addLinks"
             ></input>
-            <Image fill src={linkIcon} alt="link icon" className="linkIcon" />
+            <Image
+              width={20}
+              height={21}
+              src={linkIcon}
+              alt="link icon"
+              className="linkIcon"
+            />
             <button className="addBtn" onClick={handleShowModal}>
               추가하기
             </button>

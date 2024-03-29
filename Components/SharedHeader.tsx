@@ -20,11 +20,19 @@ export function SharedHeader({ profile, folder }: Props) {
         <nav>
           <div className="navBar">
             <a href="index.html">
-              <Image src={logo} alt="logo" className="logo" />
+              <Image
+                width={133}
+                height={24}
+                src={logo}
+                alt="logo"
+                className="logo"
+              />
             </a>
             {profile?.email ? (
               <div className="profile">
                 <Image
+                  width={15}
+                  height={15}
                   src={profile.image || ""}
                   alt="userProfileImg"
                   className="profileImg"
@@ -41,6 +49,8 @@ export function SharedHeader({ profile, folder }: Props) {
         <header>
           <div className="folderProfile">
             <Image
+              width={15}
+              height={15}
               src={folder?.profileImage || ""}
               alt="폴더소유자프로필사진"
               className="folderImg"
