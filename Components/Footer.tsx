@@ -4,22 +4,23 @@ import twitter from "@/public/images/twitter.svg";
 import youtube from "@/public/images/youtube.svg";
 import instagram from "@/public/images/instagram.svg";
 import Image from "next/image";
+import styles from "@/styles/footer.module.css";
 
 export function Footer() {
   return (
     <>
-      <footer className="footer">
-        <div className="footerBox">
-          <div className="copyRight">©codeit - 2023</div>
-          <div className="links">
-            <a href="/privacy" className="link">
+      <footer className={styles.footer}>
+        <div className={styles.footerBox}>
+          <div className={styles.copyRight}>©codeit - 2023</div>
+          <div className={styles.links}>
+            <a href="/privacy" className={styles.link}>
               Privacy Policy
             </a>
-            <a href="/faq" className="link">
+            <a href="/faq" className={styles.link}>
               FAQ
             </a>
           </div>
-          <div className="sns">
+          <div className={styles.sns}>
             <a href="#" target="_blank">
               <Image width={20} height={20} src={facebook} alt="facebook" />
             </a>

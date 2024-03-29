@@ -1,6 +1,6 @@
 import Modal from "react-modal";
 import closeIcon from "@/public/images/close.svg";
-import "../../styles/Modal.module.css";
+import styles from "@/styles/Modal.module.css";
 import Image from "next/image";
 
 interface Props {
@@ -24,13 +24,13 @@ const ModalContainer = ({ isOpen, onClose, children }: Props) => {
 
   return (
     <Modal isOpen={isOpen} onRequestClose={onClose} style={defaultStyles}>
-      <div className="modalBox">
+      <div className={styles.modalBox}>
         <Image
           width={24}
           height={24}
           src={closeIcon}
           alt="닫기버튼"
-          className="closeIcon"
+          className={styles.closeIcon}
           onClick={onClose}
         />
         {children}

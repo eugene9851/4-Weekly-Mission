@@ -53,6 +53,26 @@
   width: 10rem;
 }
 
+.folderProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.folderImg {
+  margin-top: 2rem;
+  height: 7rem;
+  width: 7rem;
+}
+.folderProfileName {
+  margin: 1rem;
+  font-size: 1.8rem;
+}
+.folderName {
+  font-size: 4rem;
+  font-weight: 600;
+  margin: 2rem 0 7rem;
+}
+
 @media (max-width: 1199px) {
   .nav {
     padding: 0 5rem;

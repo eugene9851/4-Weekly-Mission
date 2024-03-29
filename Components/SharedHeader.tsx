@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "@/public/images/logo.svg";
 import Image from "next/image";
+import styles from "@/styles/header.module.css";
 
 interface Props {
   profile?: {
@@ -16,47 +17,50 @@ interface Props {
 export function SharedHeader({ profile, folder }: Props) {
   return (
     <>
-      <div className="headerArea">
+      <div className={styles.headerArea}>
         <nav>
-          <div className="navBar">
+          <div className={styles.navBar}>
             <a href="index.html">
               <Image
                 width={133}
                 height={24}
                 src={logo}
                 alt="logo"
-                className="logo"
+                className={styles.logo}
               />
             </a>
             {profile?.email ? (
-              <div className="profile">
+              <div className={styles.profile}>
                 <Image
-                  width={15}
+                  width={20}
                   height={15}
                   src={profile.image || ""}
                   alt="userProfileImg"
-                  className="profileImg"
-                ></Image>
-                <span className="userEmail">{profile.email}</span>
+                  className={styles.profileImg}
+                />
+                <span className={styles.userEmail}>{profile.email}</span>
               </div>
             ) : (
-              <a href="../Pages/signIn.html" className="btn btnS">
+              <a
+                href="../Pages/signIn.html"
+                className={(styles.btn, styles.btnS)}
+              >
                 로그인
               </a>
             )}
           </div>
         </nav>
         <header>
-          <div className="folderProfile">
+          <div className={styles.folderProfile}>
             <Image
               width={15}
               height={15}
               src={folder?.profileImage || ""}
               alt="폴더소유자프로필사진"
-              className="folderImg"
+              className={styles.folderImg}
             />
-            <p className="folderProfileName">{folder?.profileName}</p>
-            <h2 className="folderName">{folder?.folderName}</h2>
+            <p className={styles.folderProfileName}>{folder?.profileName}</p>
+            <h2 className={styles.folderName}>{folder?.folderName}</h2>
           </div>
         </header>
       </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { getFromTime } from "../utils/getFromTime";
 import favoriteIcon from "@/public/images/favorite.svg";
 import kebabIcon from "@/public/images/kebab.svg";
-import "../styles/folderCard.module.css";
+import styles from "../styles/main.module.css";
 import { CardKebab } from "./CardKebab";
 import { Link } from "@/useHooks/useLinks";
 import Image from "next/image";
@@ -37,14 +37,14 @@ export function FolderCard({ cardInfo }: Props) {
   return (
     <>
       <a href={url}>
-        <div className="card">
-          <div className="cardImgSource">
+        <div className={styles.card}>
+          <div className={styles.cardImgSource}>
             <Image
               width={300}
               height={200}
               src={src}
               alt={alt}
-              className="cardImg"
+              className={styles.cardImg}
             />
             <div>
               <Image
@@ -52,7 +52,7 @@ export function FolderCard({ cardInfo }: Props) {
                 height={27}
                 src={favoriteIcon}
                 alt="favorite icon"
-                className="favorite"
+                className={styles.favorite}
               />
               <button onClick={handleClickKebab}>
                 <Image
@@ -60,16 +60,16 @@ export function FolderCard({ cardInfo }: Props) {
                   height={17}
                   src={kebabIcon}
                   alt="kebab icon"
-                  className="kebab"
+                  className={styles.kebab}
                 />
               </button>
               {kebabToggle && <CardKebab url={url} />}
             </div>
           </div>
-          <div className="cardContent">
-            <p className="createdFrom">{getFromTime(created_at)}</p>
-            <p className="description">{description}</p>
-            <p className="createdAt">{createdAtDate}</p>
+          <div className={styles.cardContent}>
+            <p className={styles.createdFrom}>{getFromTime(created_at)}</p>
+            <p className={styles.description}>{description}</p>
+            <p className={styles.createdAt}>{createdAtDate}</p>
           </div>
         </div>
       </a>

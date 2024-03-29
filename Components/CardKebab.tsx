@@ -1,4 +1,4 @@
-import "../styles/CardKebab.module.css";
+import styles from "../styles/CardKebab.module.css";
 import { useShowModal } from "../useHooks/useShowModal";
 import ModalAddToFolder from "./Modal/ModalAddToFolder";
 import ModalDeleteLink from "./Modal/ModalDeleteLink";
@@ -11,11 +11,17 @@ export function CardKebab({ url }: Props) {
     useShowModal();
 
   return (
-    <div className="kebabBox">
-      <button className="kebabDelete kebabBtn" onClick={handleShowModal}>
+    <div className={styles.kebabBox}>
+      <button
+        className={(styles.kebabDelete, styles.kebabBtn)}
+        onClick={handleShowModal}
+      >
         삭제하기
       </button>
-      <button className="kebabAddMyFolder kebabBtn" onClick={handleShowModal}>
+      <button
+        className={(styles.kebabAddMyFolder, styles.kebabBtn)}
+        onClick={handleShowModal}
+      >
         폴더에 추가
       </button>
       {showModal && clickValue === "폴더에 추가" ? (

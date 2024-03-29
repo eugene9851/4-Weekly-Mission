@@ -1,4 +1,4 @@
-import "../styles/button.module.css";
+import styles from "@/styles/button.module.css";
 
 export function Button({
   folderName,
@@ -8,7 +8,7 @@ export function Button({
   onClick: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }) {
   return (
-    <button className="titleButton" onClick={onClick}>
+    <button className={styles.titleButton} onClick={onClick}>
       {folderName}
     </button>
   );

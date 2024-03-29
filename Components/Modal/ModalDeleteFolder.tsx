@@ -1,4 +1,5 @@
 import ModalContainer from "./ModalContainer";
+import styles from "@/styles/Modal.module.css";
 
 interface Props {
   isOpen: boolean;
@@ -9,9 +10,9 @@ interface Props {
 const ModalDeleteFolder = ({ isOpen, onClose, currentMenu }: Props) => {
   const deleteFolderContent = (
     <>
-      <h2 className="title">폴더 삭제</h2>
+      <h2 className={styles.title}>폴더 삭제</h2>
       <p>{currentMenu}</p>
-      <button className="redButton">삭제하기</button>
+      <button className={styles.redButton}>삭제하기</button>
     </>
   );
 

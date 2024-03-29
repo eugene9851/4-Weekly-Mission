@@ -1,3 +1,8 @@
+.title {
+  font-weight: 800;
+  font-size: 2.6rem;
+}
+
 .modalBox {
   display: flex;
   flex-direction: column;
@@ -30,8 +35,8 @@
   border-radius: 10px;
   border: 1px solid var(--gray20);
 }
-.modalInput:focus{
-  border-color: var(--primary)
+.modalInput:focus {
+  border-color: var(--primary);
 }
 
 .modalBox button {
@@ -75,24 +80,24 @@
   cursor: pointer;
 }
 
-.menuLists{
+.menuLists {
   width: 100%;
   height: 170px;
   overflow: auto;
 }
 
-.menuList{
+.menuList {
   padding: 1rem;
   font-size: 1.7rem;
   cursor: pointer;
   border-radius: 10px;
   display: flex;
-  gap: 1rem
+  gap: 1rem;
 }
-.menuList:hover{
-  background-color: #F0F6FF;
+.menuList:hover {
+  background-color: #f0f6ff;
 }
-.menuList p{
+.menuList p {
   font-size: 1.4rem;
   margin-top: 4px;
 }

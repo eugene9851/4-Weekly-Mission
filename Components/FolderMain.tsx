@@ -7,6 +7,7 @@ import { useLinks } from "../useHooks/useLinks";
 import searchIcon from "@/public/images/search.svg";
 import closeIcon from "@/public/images/close.svg";
 import Image from "next/image";
+import styles from "@/styles/main.module.css";
 
 export function FolderMain() {
   const { currentMenu, setCurrentMenu } = useFolder();
@@ -40,10 +41,10 @@ export function FolderMain() {
 
   return (
     <>
-      <main className="mainArea">
-        <form className="searchArea">
+      <main className={styles.mainArea}>
+        <form className={styles.searchArea}>
           <input
-            className="searchInput"
+            className={styles.searchInput}
             placeholder="링크를 검색해 보세요."
             value={searchInput}
             onChange={handleSearchData}
@@ -53,35 +54,35 @@ export function FolderMain() {
             height={16}
             src={searchIcon}
             alt="search"
-            className="searchImg"
+            className={styles.searchImg}
           />
           <Image
             width={24}
             height={24}
             src={closeIcon}
             alt="close"
-            className="closeImg"
+            className={styles.closeImg}
             onClick={handleInputValue}
           />
         </form>
 
         <FolderMenu onMenuChange={handleMenuChange} />
 
-        <div className="titleBar">
-          <div className="title">{currentMenu}</div>
+        <div className={styles.titleBar}>
+          <div className={styles.title}>{currentMenu}</div>
           {currentMenu !== "전체" && folderCurrentId && (
             <HandleFolder id={folderCurrentId} />
           )}
         </div>
 
         {linkArray && linkArray.length ? (
-          <div className="cardGrid">
+          <div className={styles.cardGrid}>
             {linkArray.map((card) => (
               <FolderCard key={card.id} cardInfo={card}></FolderCard>
             ))}
           </div>
         ) : (
-          <div className="noLink">저장된 링크가 없습니다.</div>
+          <div className={styles.noLink}>저장된 링크가 없습니다.</div>
         )}
       </main>
     </>

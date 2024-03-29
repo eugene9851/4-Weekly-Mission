@@ -1,4 +1,5 @@
 import ModalContainer from "./ModalContainer";
+import styles from "@/styles/Modal.module.css";
 
 interface Props {
   isOpen: boolean;
@@ -9,9 +10,9 @@ interface Props {
 const ModalDeleteLink = ({ isOpen, onClose, url }: Props) => {
   const deleteLinkContent = (
     <>
-      <h2 className="title">링크 삭제</h2>
+      <h2 className={styles.title}>링크 삭제</h2>
       <p>{url}</p>
-      <button className="redButton">삭제하기</button>
+      <button className={styles.redButton}>삭제하기</button>
     </>
   );
 

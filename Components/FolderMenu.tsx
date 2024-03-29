@@ -1,4 +1,4 @@
-import "../styles/folderMenu.module.css";
+import styles from "../styles/folderMenu.module.css";
 import { useFolderNames } from "../useHooks/useFolderNames";
 import { Button } from "./Button";
 import { useShowModal } from "../useHooks/useShowModal";
@@ -23,7 +23,7 @@ export function FolderMenu({ onMenuChange }: Props) {
 
   return (
     <>
-      <div className="folderMenu">
+      <div className={styles.folderMenu}>
         <div>
           <Button folderName={"전체"} onClick={(e) => sendMenu(e)}></Button>
           {folderNames &&
@@ -37,7 +37,7 @@ export function FolderMenu({ onMenuChange }: Props) {
             ))}
         </div>
 
-        <button className="add" onClick={handleShowModal}>
+        <button className={styles.add} onClick={handleShowModal}>
           폴더 추가 +
         </button>
         {showModal && (

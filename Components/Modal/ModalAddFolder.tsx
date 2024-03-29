@@ -1,4 +1,5 @@
 import ModalContainer from "./ModalContainer";
+import styles from "@/styles/Modal.module.css";
 
 const ModalAddFolder = ({
   isOpen,
@@ -11,9 +12,9 @@ const ModalAddFolder = ({
 }) => {
   const addContent = (
     <>
-      <h2 className="title">폴더 추가</h2>
-      <input placeholder={selectedFolderName} className="modalInput" />
-      <button className="blueButton">추가하기</button>
+      <h2 className={styles.title}>폴더 추가</h2>
+      <input placeholder={selectedFolderName} className={styles.modalInput} />
+      <button className={styles.blueButton}>추가하기</button>
     </>
   );
 

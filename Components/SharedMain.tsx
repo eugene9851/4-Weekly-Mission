@@ -4,6 +4,7 @@ import { CardLinks } from "@/useHooks/useSampleFolder";
 import closeIcon from "@/public/images/close.svg";
 import { useState } from "react";
 import Image from "next/image";
+import styles from "@/styles/main.module.css";
 
 export function SharedMain({ cards }: { cards: CardLinks[] }) {
   const [searchInput, setSearchInput] = useState<string>("");
@@ -27,10 +28,10 @@ export function SharedMain({ cards }: { cards: CardLinks[] }) {
 
   return (
     <>
-      <div className="mainArea">
-        <form className="searchArea">
+      <div className={styles.mainArea}>
+        <form className={styles.searchArea}>
           <input
-            className="searchInput"
+            className={styles.searchInput}
             placeholder="링크를 검색해 보세요."
             value={searchInput}
             onChange={handleSearchData}
@@ -40,19 +41,19 @@ export function SharedMain({ cards }: { cards: CardLinks[] }) {
             height={16}
             src={searchIcon}
             alt="search"
-            className="searchImg"
+            className={styles.searchImg}
           />
           <Image
             width={24}
             height={24}
             src={closeIcon}
             alt="close"
-            className="closeImg"
+            className={styles.closeImg}
             onClick={handleInputValue}
           />
         </form>
 
-        <div className="cardGrid">
+        <div className={styles.cardGrid}>
           {linkArray &&
             linkArray.map((card) => (
               <Card key={card.id} cardInfo={card}></Card>
