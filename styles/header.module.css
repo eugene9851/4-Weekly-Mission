@@ -1,18 +1,18 @@
-@import './sharedHeader.css';
-@import './folderHeader.css';
+@import "./sharedHeader.module.css";
+@import "./folderHeader.module.css";
 
-.headerArea{
-  background-color: #F0F6FF;
+.headerArea {
+  background-color: #f0f6ff;
   z-index: 1;
   padding: 0 20rem;
   max-width: 192rem;
 }
 
-nav{
+.nav {
   width: 100%;
 }
 
-.navBar{
+.navBar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,25 +21,25 @@ nav{
   width: 100%;
 }
 
-.logo{
+.logo {
   height: 2.4rem;
 }
-.profile{
+.profile {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-.profileImg{
+.profileImg {
   height: 2.4rem;
   border-radius: 50%;
 }
-.userEmail{
+.userEmail {
   font-size: 1.3rem;
 }
 
-.btn{
+.btn {
   border-radius: 0.8rem;
-  background-image: linear-gradient(91deg, var(--primary), #6AE3FE 101.84%);
+  background-image: linear-gradient(91deg, var(--primary), #6ae3fe 101.84%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,23 +54,23 @@ nav{
 }
 
 @media (max-width: 1199px) {
-  nav{
+  .nav {
     padding: 0 5rem;
   }
-  .headerArea{
-    padding: 0
+  .headerArea {
+    padding: 0;
   }
 }
 
 @media (max-width: 767px) {
-  .logo{
+  .logo {
     height: 2rem;
   }
-  .btn{
+  .btn {
     height: 3.7rem;
     font-size: 1.4rem;
   }
-  .btnS{
+  .btnS {
     width: 8rem;
   }
 }

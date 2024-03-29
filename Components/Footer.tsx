@@ -8,7 +8,7 @@ import Image from "next/image";
 export function Footer() {
   return (
     <>
-      <footer>
+      <footer className="footer">
         <div className="footerBox">
           <div className="copyRight">©codeit - 2023</div>
           <div className="links">

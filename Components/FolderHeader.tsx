@@ -10,7 +10,7 @@ export function FolderHeader({ profile }: Props) {
   return (
     <>
       <header className="headerArea">
-        <nav>
+        <nav className="nav">
           <div className="navBar">
             <a href="index.html">
               <Image

@@ -3,7 +3,7 @@ import { FolderHeader } from "../Components/FolderHeader";
 import { Footer } from "../Components/Footer";
 import { FolderMain } from "../Components/FolderMain";
 import { getUserData } from "./api/FolderPageApi";
-// import "@/styles/Page.css";
+import "@/styles/Page.module.css";
 import { Profile } from "./api/FolderPageApi";
 import AddLinkBar from "../Components/addLinkBar";
 

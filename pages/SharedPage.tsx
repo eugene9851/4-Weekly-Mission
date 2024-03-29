@@ -3,7 +3,7 @@ import { SharedHeader } from "../Components/SharedHeader";
 import { Footer } from "../Components/Footer";
 import { SharedMain } from "../Components/SharedMain";
 import { getSampleData } from "./api/SharePageApi";
-// import "../styles/Page.css";
+import "../styles/Page.module.css";
 import { useSampleFolder } from "../useHooks/useSampleFolder";
 import { Profile } from "./api/FolderPageApi";
 
