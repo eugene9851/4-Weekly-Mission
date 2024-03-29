@@ -2,6 +2,7 @@ import logo from "@/public/images/logo.svg";
 import { Profile } from "../pages/api/FolderPageApi";
 import Image from "next/image";
 import styles from "@/styles/header.module.css";
+import Link from "next/link";
 
 interface Props {
   profile?: Profile;
@@ -13,7 +14,7 @@ export function FolderHeader({ profile }: Props) {
       <header className={styles.headerArea}>
         <nav className={styles.nav}>
           <div className={styles.navBar}>
-            <a href="index.html">
+            <Link href="/">
               <Image
                 width={133}
                 height={24}
@@ -21,7 +22,7 @@ export function FolderHeader({ profile }: Props) {
                 alt="logo"
                 className={styles.logo}
               />
-            </a>
+            </Link>
             {profile?.email ? (
               <div className={styles.profile}>
                 <Image
@@ -34,12 +35,12 @@ export function FolderHeader({ profile }: Props) {
                 <span className={styles.userEmail}>{profile.email}</span>
               </div>
             ) : (
-              <a
+              <Link
                 href="../Pages/signIn.html"
                 className={(styles.btn, styles.btnS)}
               >
                 로그인
-              </a>
+              </Link>
             )}
           </div>
         </nav>

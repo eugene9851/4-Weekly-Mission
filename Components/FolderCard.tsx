@@ -4,11 +4,12 @@ import favoriteIcon from "@/public/images/favorite.svg";
 import kebabIcon from "@/public/images/kebab.svg";
 import styles from "../styles/main.module.css";
 import { CardKebab } from "./CardKebab";
-import { Link } from "@/useHooks/useLinks";
+import { LinkType } from "@/useHooks/useLinks";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
-  cardInfo: Link;
+  cardInfo: LinkType;
 }
 
 const defaultImage = `https://www.shutterstock.com/image-vector/default-image-icon-vector-missing-600nw-2079504220.jpg`;
@@ -36,7 +37,7 @@ export function FolderCard({ cardInfo }: Props) {
 
   return (
     <>
-      <a href={url}>
+      <Link href={url}>
         <div className={styles.card}>
           <div className={styles.cardImgSource}>
             <Image
@@ -72,7 +73,7 @@ export function FolderCard({ cardInfo }: Props) {
             <p className={styles.createdAt}>{createdAtDate}</p>
           </div>
         </div>
-      </a>
+      </Link>
     </>
   );
 }

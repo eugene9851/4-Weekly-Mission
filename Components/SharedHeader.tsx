@@ -2,6 +2,7 @@ import React from "react";
 import logo from "@/public/images/logo.svg";
 import Image from "next/image";
 import styles from "@/styles/header.module.css";
+import Link from "next/link";
 
 interface Props {
   profile?: {
@@ -20,7 +21,7 @@ export function SharedHeader({ profile, folder }: Props) {
       <div className={styles.headerArea}>
         <nav>
           <div className={styles.navBar}>
-            <a href="index.html">
+            <Link href="/">
               <Image
                 width={133}
                 height={24}
@@ -28,7 +29,7 @@ export function SharedHeader({ profile, folder }: Props) {
                 alt="logo"
                 className={styles.logo}
               />
-            </a>
+            </Link>
             {profile?.email ? (
               <div className={styles.profile}>
                 <Image
@@ -41,12 +42,12 @@ export function SharedHeader({ profile, folder }: Props) {
                 <span className={styles.userEmail}>{profile.email}</span>
               </div>
             ) : (
-              <a
+              <Link
                 href="../Pages/signIn.html"
                 className={(styles.btn, styles.btnS)}
               >
                 로그인
-              </a>
+              </Link>
             )}
           </div>
         </nav>

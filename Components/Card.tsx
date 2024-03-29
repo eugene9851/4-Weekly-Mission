@@ -3,6 +3,7 @@ import { getFromTime } from "../utils/getFromTime";
 import { CardInfo } from "@/useHooks/useSampleFolder";
 import Image from "next/image";
 import styles from "../styles/main.module.css";
+import Link from "next/link";
 
 const defaultImage = `https://www.shutterstock.com/image-vector/default-image-icon-vector-missing-600nw-2079504220.jpg`;
 export function Card({ cardInfo }: { cardInfo: CardInfo }) {
@@ -20,7 +21,7 @@ export function Card({ cardInfo }: { cardInfo: CardInfo }) {
 
   return (
     <>
-      <a href={url}>
+      <Link href={url}>
         <div className={styles.card}>
           <div className={styles.cardImgSource}>
             <Image
@@ -37,7 +38,7 @@ export function Card({ cardInfo }: { cardInfo: CardInfo }) {
             <p className={styles.createdAt}>{createdAtDate}</p>
           </div>
         </div>
-      </a>
+      </Link>
     </>
   );
 }

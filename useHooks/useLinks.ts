@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getFolderById } from "../pages/api/FolderPageApi";
 
-export type Link = {
+export type LinkType = {
   id: number;
   image_source: string;
   created_at: number;
@@ -11,7 +11,7 @@ export type Link = {
 };
 
 export const useLinks = () => {
-  const [links, setLinks] = useState<Link[]>([]);
+  const [links, setLinks] = useState<LinkType[]>([]);
 
   const fetchAllLinks = async () => {
     const { data } = await getFolderById();
