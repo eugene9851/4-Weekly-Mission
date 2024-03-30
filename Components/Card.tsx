@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from "../styles/main.module.css";
 import Link from "next/link";
 
-const defaultImage = `https://www.shutterstock.com/image-vector/default-image-icon-vector-missing-600nw-2079504220.jpg`;
+const DEFAULT_IMAGE = `https://www.shutterstock.com/image-vector/default-image-icon-vector-missing-600nw-2079504220.jpg`;
 export function Card({ cardInfo }: { cardInfo: CardInfo }) {
   const { imageSource, createdAt, description, url } = cardInfo;
 
@@ -16,7 +16,7 @@ export function Card({ cardInfo }: { cardInfo: CardInfo }) {
     .slice(0, date.indexOf("오") - 2)
     .join("");
 
-  const src = imageSource ? imageSource : defaultImage;
+  const src = imageSource ? imageSource : DEFAULT_IMAGE;
   const alt = imageSource ? "카드이미지" : "기본이미지";
 
   return (
