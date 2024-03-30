@@ -9,10 +9,10 @@ import ModalDeleteFolder from "./Modal/ModalDeleteFolder";
 import { useFolder } from "../useHooks/useFolder";
 import Image from "next/image";
 
-interface Props {
+interface HandleFolderProps {
   id: number;
 }
-export function HandleFolder({ id }: Props) {
+export function HandleFolder({ id }: HandleFolderProps) {
   const { handleShowModal, showModal, setShowModal, clickValue } =
     useShowModal();
   const { currentMenu } = useFolder();

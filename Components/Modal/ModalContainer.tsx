@@ -3,13 +3,13 @@ import closeIcon from "@/public/images/close.svg";
 import styles from "@/styles/Modal.module.css";
 import Image from "next/image";
 
-interface Props {
+interface ModalContainerProps {
   isOpen: boolean;
   onClose: () => void;
   children: JSX.Element;
 }
 
-const ModalContainer = ({ isOpen, onClose, children }: Props) => {
+const ModalContainer = ({ isOpen, onClose, children }: ModalContainerProps) => {
   const defaultStyles = {
     content: {
       top: "50%",

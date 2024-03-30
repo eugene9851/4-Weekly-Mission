@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "@/styles/header.module.css";
 import Link from "next/link";
 
-interface Props {
+interface SharedHeaderProps {
   profile?: {
     email: string;
     image: string;
@@ -15,7 +15,7 @@ interface Props {
     folderName: string;
   };
 }
-export function SharedHeader({ profile, folder }: Props) {
+export function SharedHeader({ profile, folder }: SharedHeaderProps) {
   return (
     <>
       <div className={styles.headerArea}>

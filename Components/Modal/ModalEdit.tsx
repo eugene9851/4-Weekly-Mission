@@ -1,13 +1,13 @@
 import ModalContainer from "./ModalContainer";
 import styles from "@/styles/Modal.module.css";
 
-interface Props {
+interface ModalEditProps {
   isOpen: boolean;
   onClose: () => void;
   selectedFolderName: string;
 }
 
-const ModalEdit = ({ isOpen, onClose, selectedFolderName }: Props) => {
+const ModalEdit = ({ isOpen, onClose, selectedFolderName }: ModalEditProps) => {
   const editContent = (
     <>
       <h2 className={styles.title}>폴더 이름 변경</h2>

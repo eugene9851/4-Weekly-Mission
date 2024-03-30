@@ -3,10 +3,10 @@ import { useShowModal } from "../useHooks/useShowModal";
 import ModalAddToFolder from "./Modal/ModalAddToFolder";
 import ModalDeleteLink from "./Modal/ModalDeleteLink";
 
-interface Props {
+interface CardKebabProps {
   url: string;
 }
-export function CardKebab({ url }: Props) {
+export function CardKebab({ url }: CardKebabProps) {
   const { handleShowModal, showModal, setShowModal, clickValue } =
     useShowModal();
 

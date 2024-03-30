@@ -4,10 +4,10 @@ import { Button } from "./Button";
 import { useShowModal } from "../useHooks/useShowModal";
 import ModalAddFolder from "./Modal/ModalAddFolder";
 
-interface Props {
+interface FolderMenuProps {
   onMenuChange: (newMenu: string, id?: number) => void;
 }
-export function FolderMenu({ onMenuChange }: Props) {
+export function FolderMenu({ onMenuChange }: FolderMenuProps) {
   const { folderNames } = useFolderNames();
   const { handleShowModal, showModal, setShowModal } = useShowModal();
 

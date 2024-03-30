@@ -1,13 +1,13 @@
 import ModalContainer from "./ModalContainer";
 import styles from "@/styles/Modal.module.css";
 
-interface Props {
+interface ModalDeleteLinkProps {
   isOpen: boolean;
   onClose: () => void;
   url: string;
 }
 
-const ModalDeleteLink = ({ isOpen, onClose, url }: Props) => {
+const ModalDeleteLink = ({ isOpen, onClose, url }: ModalDeleteLinkProps) => {
   const deleteLinkContent = (
     <>
       <h2 className={styles.title}>링크 삭제</h2>

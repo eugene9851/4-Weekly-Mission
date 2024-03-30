@@ -8,7 +8,7 @@ import { useKakaoShare } from "../../useHooks/useKakaoShare";
 import Image from "next/image";
 import styles from "@/styles/Modal.module.css";
 
-interface Props {
+interface ModalShareProps {
   isOpen: boolean;
   onClose: () => void;
   currentMenu: string;
@@ -20,7 +20,7 @@ const ModalShare = ({
   onClose,
   currentMenu,
   currentFolderId,
-}: Props) => {
+}: ModalShareProps) => {
   const { shareKakao } = useKakaoShare(currentFolderId);
 
   const urlBaseLink = "http://localhost:3000/shared/";

@@ -8,12 +8,12 @@ import { LinkType } from "@/useHooks/useLinks";
 import Image from "next/image";
 import Link from "next/link";
 
-interface Props {
+interface FolderCardProps {
   cardInfo: LinkType;
 }
 
 const defaultImage = `https://www.shutterstock.com/image-vector/default-image-icon-vector-missing-600nw-2079504220.jpg`;
-export function FolderCard({ cardInfo }: Props) {
+export function FolderCard({ cardInfo }: FolderCardProps) {
   const { image_source, created_at, description, url } = cardInfo;
 
   const [kebabToggle, setKebabToggle] = useState(false);

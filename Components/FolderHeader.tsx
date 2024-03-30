@@ -4,11 +4,11 @@ import Image from "next/image";
 import styles from "@/styles/header.module.css";
 import Link from "next/link";
 
-interface Props {
+interface FolderHeaderProps {
   profile?: Profile;
 }
 
-export function FolderHeader({ profile }: Props) {
+export function FolderHeader({ profile }: FolderHeaderProps) {
   return (
     <>
       <header className={styles.headerArea}>
