@@ -5,6 +5,7 @@ import { FolderMain } from "../Components/FolderMain";
 import { getUserData } from "./api/FolderPageApi";
 import { Profile } from "./api/FolderPageApi";
 import AddLinkBar from "../Components/addLinkBar";
+import styles from "../styles/footer.module.css";
 
 export default function FolderPage() {
   const [profile, setProfile] = useState<Profile>();
@@ -25,27 +26,23 @@ export default function FolderPage() {
   };
 
   useEffect(() => {
-    const options = {
+    const topOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: [0.1],
+      threshold: [0],
     };
 
     const handleTopIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting && isTopVisible) {
-          console.log(entry.isIntersecting);
-          entry.target.classList.add("fixedAddLinkBar");
-          setIsTopVisible(false);
-        } else if (entry.isIntersecting && !isTopVisible) {
-          entry.target.classList.remove("fixedAddLinkBar");
-          setIsTopVisible(true);
-        }
+        entry.target.classList.toggle(
+          styles.fixedAddLinkBar,
+          !entry.isIntersecting
+        );
+        setIsTopVisible(!entry.isIntersecting);
+        if (!entry.isIntersecting) isTop.unobserve(entry.target);
       });
     };
-
-    const isTop = new IntersectionObserver(handleTopIntersection, options);
-
+    const isTop = new IntersectionObserver(handleTopIntersection, topOptions);
     if (addLinkBarTopRef.current) {
       isTop.observe(addLinkBarTopRef.current);
     }
@@ -53,43 +50,41 @@ export default function FolderPage() {
     return () => {
       if (addLinkBarTopRef.current) {
         isTop.unobserve(addLinkBarTopRef.current);
+        isTop.disconnect();
       }
     };
   }, []);
 
   useEffect(() => {
-    const options = {
+    const handleFooterIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle(styles.hideFixedAddLinkBar);
+        setIsFooterVisible(!entry.isIntersecting);
+        if (entry.isIntersecting) ioFooter.unobserve(entry.target);
+      });
+    };
+
+    const footerOptions = {
       root: null,
       rootMargin: "0px",
       threshold: [0.1],
     };
 
-    const handleFooterIntersection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting && isFooterVisible) {
-          entry.target.classList.remove("hideFixedAddLinkBar");
-          setIsFooterVisible(false);
-        } else if (entry.isIntersecting && !isFooterVisible) {
-          entry.target.classList.add("hideFixedAddLinkBar");
-          setIsFooterVisible(true);
-        }
-      });
-    };
-
     const ioFooter = new IntersectionObserver(
       handleFooterIntersection,
-      options
+      footerOptions
     );
 
-    if (addLinkBarFooterRef.current)
+    if (addLinkBarFooterRef.current) {
       ioFooter.observe(addLinkBarFooterRef.current);
-
+    }
     return () => {
-      if (addLinkBarFooterRef.current) {
-        ioFooter.unobserve(addLinkBarFooterRef.current);
+      if (addLinkBarTopRef.current) {
+        ioFooter.unobserve(addLinkBarTopRef.current);
+        ioFooter.disconnect();
       }
     };
-  }, [isFooterVisible]);
+  }, []);
 
   return (
     <>
@@ -100,7 +95,6 @@ export default function FolderPage() {
           <AddLinkBar />
         </div>
         <FolderMain />
-        {/* {!isTopVisible && <AddLinkBar />} */}
       </main>
 
       <div ref={addLinkBarFooterRef}>
