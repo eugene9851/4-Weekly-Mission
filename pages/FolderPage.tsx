@@ -19,8 +19,9 @@ export default function FolderPage() {
   }, []);
 
   const getData = async () => {
-    const userData = await getUserData();
-    setProfile(userData);
+    await getUserData()
+      .then((res) => setProfile(res))
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {

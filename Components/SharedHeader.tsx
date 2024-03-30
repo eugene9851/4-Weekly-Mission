@@ -56,7 +56,7 @@ export function SharedHeader({ profile, folder }: SharedHeaderProps) {
             <Image
               width={15}
               height={15}
-              src={folder?.profileImage || ""}
+              src={folder?.profileImage ?? ""}
               alt="폴더소유자프로필사진"
               className={styles.folderImg}
             />

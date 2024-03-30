@@ -75,7 +75,7 @@ export function FolderMain() {
           )}
         </div>
 
-        {linkArray && linkArray.length ? (
+        {linkArray.length > 0 ? (
           <div className={styles.cardGrid}>
             {linkArray.map((card) => (
               <FolderCard key={card.id} cardInfo={card}></FolderCard>
