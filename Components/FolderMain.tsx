@@ -8,6 +8,7 @@ import searchIcon from "@/public/images/search.svg";
 import closeIcon from "@/public/images/close.svg";
 import Image from "next/image";
 import styles from "@/styles/main.module.css";
+import Input from "./Input";
 
 export function FolderMain() {
   const { currentMenu, setCurrentMenu } = useFolder();
