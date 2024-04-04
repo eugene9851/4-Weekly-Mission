@@ -1,0 +1,96 @@
+@import "./sharedHeader.module.css";
+@import "./folderHeader.module.css";
+
+.headerArea {
+  background-color: #f0f6ff;
+  z-index: 1;
+  padding: 0 20rem;
+  max-width: 192rem;
+}
+
+.nav {
+  width: 100%;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6.5rem;
+  padding: 4rem;
+  width: 100%;
+}
+
+.logo {
+  height: 2.4rem;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.profileImg {
+  height: 2.4rem;
+  border-radius: 50%;
+}
+.userEmail {
+  font-size: 1.3rem;
+}
+
+.btn {
+  border-radius: 0.8rem;
+  background-image: linear-gradient(91deg, var(--primary), #6ae3fe 101.84%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+  font-size: 1.8rem;
+  color: #f5f5f5;
+  font-weight: 600;
+}
+
+.btnS {
+  width: 10rem;
+}
+
+.folderProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.folderImg {
+  margin-top: 2rem;
+  height: 7rem;
+  width: 7rem;
+}
+.folderProfileName {
+  margin: 1rem;
+  font-size: 1.8rem;
+}
+.folderName {
+  font-size: 4rem;
+  font-weight: 600;
+  margin: 2rem 0 7rem;
+}
+
+@media (max-width: 1199px) {
+  .nav {
+    padding: 0 5rem;
+  }
+  .headerArea {
+    padding: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .logo {
+    height: 2rem;
+  }
+  .btn {
+    height: 3.7rem;
+    font-size: 1.4rem;
+  }
+  .btnS {
+    width: 8rem;
+  }
+}
