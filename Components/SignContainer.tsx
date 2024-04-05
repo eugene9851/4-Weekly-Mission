@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import { postSignIn } from "../utils/postSignIn";
 import { useRouter } from "next/router";
 import { postSignUp } from "@/utils/postSignUp";
+import { isNotDuplicateEmail } from "@/utils/isNotDuplicateEmail";
 
 interface signContainerProps {
   isMemberQ: string;
@@ -60,6 +61,10 @@ function SignContainer({
     pattern: {
       value: EMAIL_REGEX,
       message: "올바른 이메일 주소가 아닙니다.",
+    },
+    validate: async (value) => {
+      if (await isNotDuplicateEmail(value))
+        return "이미 존재하는 이메일입니다.";
     },
   });
 
