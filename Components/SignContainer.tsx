@@ -8,6 +8,7 @@ import kakao from "../public/images/kakao.svg";
 import { useForm } from "react-hook-form";
 import { postSignIn } from "../utils/postSignIn";
 import { useRouter } from "next/router";
+import { postSignUp } from "@/utils/postSignUp";
 
 interface signContainerProps {
   isMemberQ: string;
@@ -39,7 +40,10 @@ function SignContainer({
 
   const handleOnSubmit = async (data: any) => {
     console.log("data", data);
-    const tokenData = await postSignIn(data.email, data.password);
+    const tokenData =
+      goSignURL === "/signin"
+        ? await postSignUp(data.email, data.password, data.pwValid)
+        : await postSignIn(data.email, data.password);
     console.log("token", tokenData);
     if (tokenData) {
       localStorage.setItem("accessToken", tokenData.accessToken);

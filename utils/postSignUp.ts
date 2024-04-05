@@ -3,17 +3,18 @@ type TokenType = {
   refreshToken: string;
 };
 
-export const postSignIn = async (
+export const postSignUp = async (
   email: string,
-  password: string
+  password: string,
+  pwValid: string
 ): Promise<TokenType | undefined> => {
   try {
-    const response = await fetch("https://bootcamp-api.codeit.kr/api/sign-in", {
+    const response = await fetch("https://bootcamp-api.codeit.kr/api/sign-up", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password, pwValid }),
     });
     console.log("res", response);
     const responseData = await response.json();
