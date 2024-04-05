@@ -1,6 +1,6 @@
 import styles from "@/styles/button.module.css";
 
-export function Button({
+function Button({
   folderName,
   onClick,
 }: {
@@ -13,3 +13,5 @@ export function Button({
     </button>
   );
 }
+
+export default Button;

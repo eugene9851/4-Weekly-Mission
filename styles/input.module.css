@@ -1,6 +1,8 @@
 .input {
-  color: rgba(204, 213, 227, 1);
-  border: 1px solid black;
+  border: 1px solid rgba(204, 213, 227, 1);
+  border-radius: 8px;
+  padding: 1.4rem;
+  width: 100%;
 }
 
 .input:focus {
@@ -8,8 +10,22 @@
 }
 .errorInput {
   border: 1px solid rgba(255, 91, 86, 1);
+  border-radius: 8px;
+  padding: 1.4rem;
+  width: 100%;
 }
 
 .error {
   color: rgba(255, 91, 86, 1);
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.inputLine {
+  position: relative;
+}
+.eyeToggle {
+  position: absolute;
+  top: 1.4rem;
+  right: 1rem;
 }

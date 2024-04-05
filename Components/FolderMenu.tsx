@@ -1,6 +1,6 @@
 import styles from "../styles/folderMenu.module.css";
 import { useFolderNames } from "../useHooks/useFolderNames";
-import { Button } from "./Button";
+import Button from "./Button";
 import { useShowModal } from "../useHooks/useShowModal";
 import ModalAddFolder from "./Modal/ModalAddFolder";
 

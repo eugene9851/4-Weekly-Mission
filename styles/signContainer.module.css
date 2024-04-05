@@ -1,0 +1,81 @@
+.outfit {
+  height: 100vh;
+  background-color: #f0f6ff;
+}
+
+.container {
+  width: 350px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  font-size: 1.5rem;
+  margin-top: 2.3rem;
+  display: flex;
+  gap: 1rem;
+}
+.goSign {
+  color: rgba(109, 106, 254, 1);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 4rem;
+}
+
+.inputArea {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 350px;
+}
+
+.label {
+  font-size: 1.2rem;
+}
+
+.button {
+  border: none;
+  background: linear-gradient(rgba(109, 106, 254, 1), rgba(106, 227, 254, 1));
+  border-radius: 8px;
+  padding: 1.3rem;
+  color: white;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+
+.socialArea {
+  border: 1px solid rgba(204, 213, 227, 1);
+  background-color: rgba(231, 239, 251, 1);
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  align-items: center;
+  font-size: 1.3rem;
+  margin-top: 2rem;
+}
+
+.socialLogin {
+  color: rgba(55, 55, 64, 1);
+}
+
+.sns {
+  display: flex;
+  gap: 1rem;
+}
+.error {
+  color: rgba(255, 91, 86, 1);
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}

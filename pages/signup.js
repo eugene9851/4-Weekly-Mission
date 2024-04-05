@@ -1,49 +1,9 @@
-// Sign-in
-import Input from '../Components/Input'
-import { useState } from 'react';
+import SignContainer from "../Components/SignContainer";
 
-const EMAIL_REGEX = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
-const PW_REGEX = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$/
-
-// const validateEmail = (email) => {
-//   return EMAIL_REGEX.test(email)
-// }
-
-// const validatePassword = (pw) => {
-//   return PW_REGEX.test(pw)
-// }
-
-export default function Form() {
-  const [userInput, setUserInput] = useState({
-    email: '',
-    pw: '',
-    pwValid: ''
-  })
-
-  const [isValid, setIsValid] = useState({
-    email: false,
-    pw: false,
-    pwValid: false
-  })
-
-
-  const handleInputChange = (name, value) => {
-    setUserInput({
-      ...userInput,
-      [name]: value,
-    })
-  }
-
+export default function signup() {
   return (
-    <form>
-      <label htmlFor='email'>이메일</label>
-      <Input name='email' type='email' value={userInput.email} onChange={handleInputChange} placeholder='이메일 입력' isValid={isValid} />
-
-      <label htmlFor='pw'>비밀번호</label>
-      <Input name='pw' type='password' value={userInput.pw} onChange={handleInputChange} placeholder='비밀번호 입력' isValid={isValid} />
-
-      <label htmlFor='pwValid'>비밀번호 확인</label>
-      <Input name="pwValid" type='password' value={userInput.pwValid} onChange={handleInputChange} placeholder='비밀번호 확인 입력' isValid={isValid} />
-    </form>
+    <>
+      <SignContainer isMemberQ="이미 회원이신가요?" goSign="로그인 하기" goSignURL="/signin" loginBySns="다른 방식으로 가입하기" sign="회원가입" />
+    </>
   )
 }
