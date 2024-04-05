@@ -16,10 +16,8 @@ export const postSignUp = async (
       },
       body: JSON.stringify({ email, password, pwValid }),
     });
-    console.log("res", response);
     const responseData = await response.json();
-    console.log("response", responseData);
-    return responseData.data.data;
+    return responseData.data;
   } catch (error) {
     console.log(error);
   }

@@ -40,12 +40,10 @@ function SignContainer({
   const router = useRouter();
 
   const handleOnSubmit = async (data: any) => {
-    console.log("data", data);
     const tokenData =
       goSignURL === "/signin"
         ? await postSignUp(data.email, data.password, data.pwValid)
         : await postSignIn(data.email, data.password);
-    console.log("token", tokenData);
     if (tokenData) {
       localStorage.setItem("accessToken", tokenData.accessToken);
       localStorage.setItem("refreshToken", tokenData.refreshToken);
@@ -63,7 +61,7 @@ function SignContainer({
       message: "올바른 이메일 주소가 아닙니다.",
     },
     validate: async (value) => {
-      if (await isNotDuplicateEmail(value))
+      if (!(await isNotDuplicateEmail(value)))
         return "이미 존재하는 이메일입니다.";
     },
   });

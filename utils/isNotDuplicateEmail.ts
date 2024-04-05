@@ -11,7 +11,7 @@ export const isNotDuplicateEmail = async (value: string) => {
       }
     );
     const responseData = await response.json();
-    return responseData.data.data;
+    return responseData.data;
   } catch (error) {
     console.log(error);
   }

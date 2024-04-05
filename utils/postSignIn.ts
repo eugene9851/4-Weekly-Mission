@@ -15,10 +15,8 @@ export const postSignIn = async (
       },
       body: JSON.stringify({ email, password }),
     });
-    console.log("res", response);
     const responseData = await response.json();
-    console.log("response", responseData);
-    return responseData.data.data;
+    return responseData.data;
   } catch (error) {
     console.log(error);
   }
